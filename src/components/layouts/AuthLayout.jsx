@@ -4,17 +4,19 @@ export default function AuthLayout({ children, imageSrc, logoSrc }) {
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       {/* Left section — form */}
-      <div className="flex w-full md:w-1/2 items-center justify-center bg-white p-8">
-        <div className="max-w-md w-full">
+      <div className="flex-1 flex items-center justify-center bg-white p-6 sm:p-8">
+        <div className="w-full max-w-md">
           {/* Logo */}
           {logoSrc && (
-            <div className="mb-8 flex justify-start">
+            <div className="mb-8 flex justify-start md:justify-start">
               <img src={logoSrc} alt="Logo" className="h-8 w-auto" />
             </div>
           )}
 
           {/* Form content */}
-          {children}
+          <div className="flex flex-col justify-center">
+            {children}
+          </div>
         </div>
       </div>
 
