@@ -1,8 +1,8 @@
-// src/App.jsx
-import React from "react";
-import Login from "./pages/auth/login";
-import Signup from "./pages/auth/signup";
+import React from 'react';
+import Dashboard from './pages/dashboard';
 
-export default function App() {
-  return <Login />;
+function App() {
+  return <Dashboard />;
 }
+
+export default App;
