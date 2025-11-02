@@ -8,6 +8,7 @@ import Settings from '@/pages/dashboard/settings';
 import Login from '@/pages/auth/Login';
 import Signup from '@/pages/auth/Signup';
 import Sidebar from '@/components/layouts/Sidebar';
+import InvoiceDetails from '@/pages/dashboard/invoice-details';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/settings" element={<Settings />} />
             <Route path="/auth/login" element={<Login />} />
             <Route path="/auth/signup" element={<Signup />} />
+            <Route path="/invoices/:id" element={<InvoiceDetails />} />
           </Routes>
         </main>
       </div>
