@@ -1,95 +1,103 @@
 import React from 'react';
-import { Badge } from '@/components/ui/badge';
-import { MoreHorizontal } from 'lucide-react';
+import Card from '@/components/ui/Card';
 
-const invoiceData = [
-  {
-    id: 1,
-    client: 'Gadget Gallery LTD',
-    invoiceNumber: 'MGLS24874',
-    date: '14 Apr 2022',
-    time: 'at 8:00 PM',
-    orders: 20,
-    amount: 420.84,
-    status: 'pending'
-  },
-  {
-    id: 2,
-    client: 'Gadget Gallery LTD',
-    invoiceNumber: 'MGLS24875',
-    date: '14 Apr 2022',
-    time: 'at 8:00 PM',
-    orders: 20,
-    amount: 420.84,
-    status: 'pending'
-  },
-  {
-    id: 3,
-    client: 'Gadget Gallery LTD',
-    invoiceNumber: 'MGLS24876',
-    date: '14 Apr 2022',
-    time: 'at 8:00 PM',
-    orders: 20,
-    amount: 420.84,
-    status: 'pending'
-  },
-];
+const InvoiceTable = ({ invoices = [] }) => { // Add default empty array
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'Paid':
+        return 'bg-green-100 text-green-800';
+      case 'Pending':
+        return 'bg-yellow-100 text-yellow-800';
+      case 'Unpaid':
+        return 'bg-red-100 text-red-800';
+      default:
+        return 'bg-gray-100 text-gray-800';
+    }
+  };
 
-export const InvoiceTable = () => {
-  return (
-    <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
-      {/* Table Header with "View All" */}
-      <div className="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
-        <h3 className="text-lg font-semibold">Recent Invoice</h3>
-        <button className="text-blue-600 hover:text-blue-800 text-sm font-medium">
-          View All
-        </button>
+  // Fallback avatar component for missing images
+  const Avatar = ({ src, alt, className = "" }) => {
+    if (src) {
+      return (
+        <img 
+          src={src} 
+          alt={alt} 
+          className={`w-8 h-8 rounded-full object-cover ${className}`}
+        />
+      );
+    }
+    
+    // Fallback with initials
+    const initials = alt?.split(' ').map(n => n[0]).join('').toUpperCase() || 'NA';
+    return (
+      <div className={`w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-medium ${className}`}>
+        {initials.slice(0, 2)}
       </div>
-      
+    );
+  };
+
+  // Check if invoices is empty
+  if (!invoices || invoices.length === 0) {
+    return (
+      <Card className="p-6">
+        <div className="text-center text-gray-500 py-8">
+          <p>No invoices found</p>
+        </div>
+      </Card>
+    );
+  }
+
+  return (
+    <Card className="p-0 overflow-hidden">
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
             <tr className="border-b border-gray-200 bg-gray-50">
-              <th className="text-left py-3 px-6 font-medium text-gray-500">NAME/CLIENT</th>
-              <th className="text-left py-3 px-6 font-medium text-gray-500">DATE</th>
-              <th className="text-left py-3 px-6 font-medium text-gray-500">ORDER/STYPE</th>
-              <th className="text-left py-3 px-6 font-medium text-gray-500">AMOUNT</th>
-              <th className="text-left py-3 px-6 font-medium text-gray-500">STATUS</th>
-              <th className="text-left py-3 px-6 font-medium text-gray-500">ACTIONS</th>
+              <th className="text-left py-4 px-6 text-sm font-medium text-gray-600">NAME/CLIENT</th>
+              <th className="text-left py-4 px-6 text-sm font-medium text-gray-600">DATE</th>
+              <th className="text-left py-4 px-6 text-sm font-medium text-gray-600">ORDERSTYPE</th>
+              <th className="text-left py-4 px-6 text-sm font-medium text-gray-600">AMOUNT</th>
+              <th className="text-left py-4 px-6 text-sm font-medium text-gray-600">STATUS</th>
+              <th className="text-left py-4 px-6 text-sm font-medium text-gray-600">ACTION</th>
             </tr>
           </thead>
           <tbody>
-            {invoiceData.map((invoice) => (
-              <tr key={invoice.id} className="border-b border-gray-200 last:border-b-0 hover:bg-gray-50">
-                <td className="py-4 px-6">
-                  <div>
-                    <div className="font-semibold">{invoice.client}</div>
-                    <div className="text-sm text-gray-500">Inv: {invoice.invoiceNumber}</div>
-                  </div>
-                </td>
-                <td className="py-4 px-6">
-                  <div>
-                    <div className="font-semibold">{invoice.date}</div>
+            {invoices.map((invoice) => (
+              <React.Fragment key={invoice.id}>
+                <tr className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                  <td className="py-4 px-6">
+                    <div className="flex items-center gap-3">
+                      <Avatar src={invoice.avatar} alt={invoice.clientName} />
+                      <div>
+                        <div className="font-medium text-gray-800">{invoice.clientName}</div>
+                        <div className="text-sm text-gray-500">{invoice.invoiceNumber}</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="py-4 px-6">
+                    <div className="font-medium text-gray-800">{invoice.date}</div>
                     <div className="text-sm text-gray-500">{invoice.time}</div>
-                  </div>
-                </td>
-                <td className="py-4 px-6">{invoice.orders}</td>
-                <td className="py-4 px-6 font-semibold">${invoice.amount.toFixed(2)}</td>
-                <td className="py-4 px-6">
-                  <Badge variant="pending">Pending</Badge>
-                </td>
-                <td className="py-4 px-6">
-                  <div className="flex justify-center">
-                    <button className="text-gray-400 hover:text-gray-600 p-1">
-                      <MoreHorizontal size={16} />
+                  </td>
+                  <td className="py-4 px-6 text-gray-600">{invoice.ordersType}</td>
+                  <td className="py-4 px-6 font-medium text-gray-800">{invoice.amount}</td>
+                  <td className="py-4 px-6">
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(invoice.status)}`}>
+                      {invoice.status}
+                    </span>
+                  </td>
+                  <td className="py-4 px-6">
+                    <button className="text-gray-400 hover:text-gray-600 font-bold text-lg">
+                      ...
                     </button>
-                  </div>
-                </td>
-              </tr>
+                  </td>
+                </tr>
+              </React.Fragment>
             ))}
           </tbody>
         </table>
       </div>
-    </div>
+    </Card>
   );
 };
+
+export default InvoiceTable;

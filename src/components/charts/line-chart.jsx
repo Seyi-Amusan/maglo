@@ -11,7 +11,7 @@ const data = [
   { name: 'Apr 20', income: 4700, expenses: 3900 },
 ];
 
-export const WorkingCapitalChart = () => {
+const WorkingCapitalChart = () => {
   return (
     <ResponsiveContainer width="100%" height={300}>
       <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
@@ -46,3 +46,5 @@ export const WorkingCapitalChart = () => {
     </ResponsiveContainer>
   );
 };
+
+export default WorkingCapitalChart; // Change to default export
