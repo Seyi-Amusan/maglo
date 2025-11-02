@@ -6,6 +6,7 @@ import WorkingCapitalChart from '@/components/charts/line-chart';
 import InvoiceTable from '@/components/invoices/Invoice-table';
 import { FileText, CreditCard, Clock } from 'lucide-react';
 import { useMockDatabase } from '@/store/mockDatabase';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   const { 
@@ -77,9 +78,9 @@ const Dashboard = () => {
         <Card className="p-6">
           <div className="flex justify-between items-center mb-6">
             <h3 className="text-lg font-semibold text-gray-800">Recent Invoice</h3>
-            <button className="text-blue-600 hover:text-blue-800 text-sm font-medium">
+            <Link to="/invoices" className="text-blue-600 hover:text-blue-800 text-sm font-medium">
               View All
-            </button>
+            </Link>
           </div>
           <InvoiceTable invoices={recentInvoices} showDueDate={false} />
         </Card>

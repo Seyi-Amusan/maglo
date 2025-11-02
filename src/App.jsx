@@ -11,6 +11,7 @@ import Settings from '@/pages/dashboard/settings';
 import Login from '@/pages/auth/Login';
 import Signup from '@/pages/auth/Signup';
 import Sidebar from '@/components/layouts/Sidebar';
+import InvoiceDetails from '@/pages/dashboard/invoice-details';
 
 function App() {
   const { checkAuth, isAuthenticated } = useAuthStore();
@@ -67,9 +68,13 @@ function App() {
                 <Settings />
               </ProtectedRoute>
             } />
-            
+            <Route path="/invoices/:id" element={
+              <ProtectedRoute>
+                <InvoiceDetails />
+              </ProtectedRoute>
+            } />
             {/* Fallback redirect */}
-            <Route path="*" element={<Navigate to="/dashboard" replace />} />
+            {/* <Route path="*" element={<Navigate to="/dashboard" replace />} /> */}
           </Routes>
         </main>
       </div>
