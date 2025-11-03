@@ -70,20 +70,20 @@ const InvoiceDetails = () => {
         {/* Left Column - Invoice Details */}
         <div className="lg:col-span-2 space-y-6">
           {/* Company Info */}
-          <Card className="p-6">
+          <Card className="p-6 bg-linear-to-b from-gray-800 to-gray-700 text-white">
             <div className="flex justify-between items-start">
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Magic</h1>
-                <p className="text-gray-600">sales@maglo.com</p>
-                <p className="text-gray-600 text-sm mt-2">
+                <h1 className="text-2xl font-bold text-neutral-100">Maglo</h1>
+                <p className="text-neutral-100">sales@maglo.com</p>
+                <p className="text-neutral-100 text-sm mt-2">
                   1333 Grey Fox Farm Road Houston, TX 77060<br />
                   Bloomfield Hills, Michigan(M), 48301
                 </p>
               </div>
               <div className="text-right">
-                <div className="text-sm text-gray-600">Invoice Number</div>
-                <div className="text-lg font-bold text-gray-900">{invoice.invoiceNumber}</div>
-                <div className="text-sm text-gray-600 mt-2">
+                <div className="text-sm text-neutral-100">Invoice Number</div>
+                <div className="text-lg font-bold text-neutral-100">{invoice.invoiceNumber}</div>
+                <div className="text-sm text-neutral-100 mt-2">
                   Issued Date: {formatDate(invoice.createdAt)}<br />
                   Due Date: {formatDate(dueDate)}
                 </div>
@@ -170,7 +170,7 @@ const InvoiceDetails = () => {
                   {invoice.status.charAt(0).toUpperCase() + invoice.status.slice(1)}
                 </div>
               </div>
-              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+              <Button className="w-full bg-lime-300 p-3 rounded-lg">
                 Send Invoice
               </Button>
             </div>
@@ -192,12 +192,12 @@ const InvoiceDetails = () => {
           <Card className="p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Actions</h3>
             <div className="space-y-3">
-              <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+              <Button className="w-full bg-lime-300 p-3 rounded-lg">
                 Download PDF
               </Button>
               <Button 
                 onClick={() => navigate('/invoices')}
-                className="w-full bg-gray-600 hover:bg-gray-700 text-white"
+                className="w-full bg-lime-300  p-3 rounded-lg"
               >
                 Back to Invoices
               </Button>

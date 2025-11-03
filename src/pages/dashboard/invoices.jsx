@@ -46,13 +46,13 @@ const Invoices = () => {
         <div className="flex gap-2">
           <Button 
             onClick={() => setShowCreateForm(!showCreateForm)}
-            className="bg-blue-600 hover:bg-blue-700 text-white"
+            className= "bg-lime-300 p-3 rounded-lg"
           >
-            {showCreateForm ? 'Cancel' : '+ New Invoice'}
+            {showCreateForm ? 'Cancel' : 'New Invoice'}
           </Button>
           <Button 
             onClick={resetData}
-            className="bg-gray-600 hover:bg-gray-700 text-white"
+            className="bg-lime-300 p-3 rounded-lg"
             title="Reset to initial mock data"
           >
             Reset Data
@@ -73,9 +73,9 @@ const Invoices = () => {
         <div className="flex gap-2 flex-wrap">
           <button
             onClick={() => setFilter('all')}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+            className={` px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               filter === 'all' 
-                ? 'bg-blue-600 text-white' 
+                ? 'bg-lime-300' 
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
           >
@@ -85,7 +85,7 @@ const Invoices = () => {
             onClick={() => setFilter('paid')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               filter === 'paid' 
-                ? 'bg-green-600 text-white' 
+                ? 'bg-lime-300'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
           >
@@ -95,7 +95,7 @@ const Invoices = () => {
             onClick={() => setFilter('unpaid')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               filter === 'unpaid' 
-                ? 'bg-red-600 text-white' 
+                ? 'bg-lime-300'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
           >
@@ -105,7 +105,7 @@ const Invoices = () => {
             onClick={() => setFilter('pending')}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               filter === 'pending' 
-                ? 'bg-yellow-600 text-white' 
+                ? 'bg-lime-300'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             }`}
           >

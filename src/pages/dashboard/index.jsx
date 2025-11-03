@@ -78,7 +78,7 @@ const Dashboard = () => {
         <Card className="p-6">
           <div className="flex justify-between items-center mb-6">
             <h3 className="text-lg font-semibold text-gray-800">Recent Invoice</h3>
-            <Link to="/invoices" className="text-blue-600 hover:text-blue-800 text-sm font-medium">
+            <Link to="/invoices" className="text-green-600 hover:text-green-800 text-sm font-medium">
               View All
             </Link>
           </div>

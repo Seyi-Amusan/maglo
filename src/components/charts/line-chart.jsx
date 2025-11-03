@@ -31,16 +31,16 @@ const WorkingCapitalChart = () => {
         <Line 
           type="monotone" 
           dataKey="income" 
-          stroke="#3B82F6" 
-          strokeWidth={3}
-          dot={{ fill: '#3B82F6', strokeWidth: 2, r: 4 }}
+          stroke="#BEF264" 
+          strokeWidth={2}
+          dot={{ fill: '#3B82F6', strokeWidth: 1, r: 2 }}
         />
         <Line 
           type="monotone" 
           dataKey="expenses" 
-          stroke="#EF4444" 
-          strokeWidth={3}
-          dot={{ fill: '#EF4444', strokeWidth: 2, r: 4 }}
+          stroke="#16A34A" 
+          strokeWidth={2}
+          dot={{ fill: '#EF4444', strokeWidth: 1, r: 2 }}
         />
       </LineChart>
     </ResponsiveContainer>

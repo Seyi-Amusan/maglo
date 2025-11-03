@@ -32,8 +32,8 @@ const Sidebar = () => {
                 to={item.path} 
                 className={`flex items-center p-3 rounded-lg transition-colors ${
                   currentPath === item.path
-                    ? 'text-blue-600 bg-blue-50 border border-blue-100'
-                    : 'text-gray-600 hover:bg-gray-50'
+                    ? ' bg-lime-300 border border-blue-100'
+                    : 'text-gray-800 hover:bg-gray-50'
                 }`}
               >
                 <span className="font-medium">{item.label}</span>

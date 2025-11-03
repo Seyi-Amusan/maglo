@@ -147,7 +147,7 @@ const InvoiceTable = ({ invoices = [], loading = false, onRefresh, showDueDate =
                 
                 <td className="py-4 px-6">
                   <div className="flex flex-col gap-2">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(invoice.status)}`}>
+                    <span className={`text-center rounded-lg text-xs font-medium py-3 px-3 ${getStatusColor(invoice.status)}`}>
                       {invoice.status.charAt(0).toUpperCase() + invoice.status.slice(1)}
                     </span>
                     
