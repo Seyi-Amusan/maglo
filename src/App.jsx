@@ -8,7 +8,7 @@ import Invoices from '@/pages/dashboard/invoices';
 import Transactions from '@/pages/dashboard/transactions';
 import Wallets from '@/pages/dashboard/wallets';
 import Settings from '@/pages/dashboard/settings';
-import Login from '@/pages/auth/Login';
+import Login from '@/pages/auth/login';
 import Signup from '@/pages/auth/Signup';
 import Sidebar from '@/components/layouts/Sidebar';
 import InvoiceDetails from '@/pages/dashboard/invoice-details';
