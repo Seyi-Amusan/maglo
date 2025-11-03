@@ -55,7 +55,7 @@ Users can log in, create invoices, mark them as paid or unpaid, and get real-tim
 
 ##  Tech Stack
 
-- **Next.js / React**
+- **React**
 - **Appwrite** (for Authentication)
 - **Mock Data** (for Database)
 - **Tailwind CSS** + **ShadCN/UI**
@@ -75,7 +75,7 @@ Users can log in, create invoices, mark them as paid or unpaid, and get real-tim
 
 ##  Live Demo
 
-🔗 **[View on Vercel](#)** — (Replace with your deployed link)
+**[View on Netlify](https://maglo-dashboard.netlify.app/)**
 
 ---
 
@@ -83,7 +83,7 @@ Users can log in, create invoices, mark them as paid or unpaid, and get real-tim
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/maglo-finance-dashboard.git
+git clone https://github.com/seyi-amusan/maglo.git
 cd maglo-finance-dashboard
 ```
 
@@ -96,12 +96,13 @@ npm install
 npm run dev
 ```
 
-Visit http://localhost:3000 to view it in your browser.
+Visit http://localhost:5173 to view it in your browser.
 
 ##  Author
 Seyi Amusan - Frontend Developer
-- LinkedIn 
-- GitHub
+- **[Portfolio](https://www.linkedin.com/in/seyi-amusan-414895294/)**
+- **[Linkedin](https://maglo-dashboard.netlify.app/)** 
+- **[Github](https://github.com/seyi-amusan)**
 
 
 ##  Demo Video
