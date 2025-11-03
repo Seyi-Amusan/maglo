@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useInvoiceStore } from '@/store/invoiceStore';
 import { toast } from 'sonner';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
@@ -190,7 +189,7 @@ const CreateInvoiceForm = ({ onSuccess }) => {
         <Button
           type="submit"
           disabled={loading}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+          className="p-3 bg-lime-300 rounded-lg"
         >
           {loading ? 'Creating Invoice...' : 'Create Invoice'}
         </Button>

@@ -50,13 +50,13 @@ const Invoices = () => {
           >
             {showCreateForm ? 'Cancel' : 'New Invoice'}
           </Button>
-          <Button 
+          {/* <Button 
             onClick={resetData}
             className="bg-lime-300 p-3 rounded-lg"
             title="Reset to initial mock data"
           >
             Reset Data
-          </Button>
+          </Button> */}
         </div>
       </Header>
 

@@ -4,7 +4,7 @@ import { Client, Account, ID } from 'appwrite';
 const client = new Client();
 
 client
-  .setEndpoint('https://nyc.cloud.appwrite.io/v1') // Your Appwrite endpoint
+  .setEndpoint('https://nyc.cloud.appwrite.io/v1')
   .setProject('6907d6fc00154b53f4de'); 
 
 // Initialize Account (Authentication)
