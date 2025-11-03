@@ -38,7 +38,7 @@ const InvoiceTable = ({ invoices = [], loading = false, onRefresh, showDueDate =
     // Fallback with initials
     const initials = alt?.split(' ').map(n => n[0]).join('').toUpperCase() || 'NA';
     return (
-      <div className={`w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-medium ${className}`}>
+      <div className={`w-8 h-8 rounded-full bg-lime-300 flex items-center justify-center text-white text-xs font-medium ${className}`}>
         {initials.slice(0, 2)}
       </div>
     );
@@ -146,8 +146,8 @@ const InvoiceTable = ({ invoices = [], loading = false, onRefresh, showDueDate =
                 </td>
                 
                 <td className="py-4 px-6">
-                  <div className="flex flex-col gap-2">
-                    <span className={`text-center rounded-lg text-xs font-medium py-3 px-3 ${getStatusColor(invoice.status)}`}>
+                  <div className="flex flex-col gap-2 items-center"> {/* Added items-center */}
+                    <span className={`w-fit text-center rounded-lg text-xs font-medium py-2 px-4 ${getStatusColor(invoice.status)}`}>
                       {invoice.status.charAt(0).toUpperCase() + invoice.status.slice(1)}
                     </span>
                     

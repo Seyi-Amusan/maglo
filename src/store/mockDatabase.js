@@ -16,7 +16,7 @@ const initialMockInvoices = [
     dueDate: '2022-04-20',
     createdAt: '2022-04-14T20:00:00Z',
     ordersType: '20',
-    avatar: '/avatars/gedget.png'
+    avatar: ''
   },
   {
     id: '2',
@@ -31,7 +31,7 @@ const initialMockInvoices = [
     dueDate: '2022-04-18',
     createdAt: '2022-04-12T20:00:00Z',
     ordersType: '01',
-    avatar: '/avatars/figma.png'
+    avatar: ''
   },
   {
     id: '3',
@@ -46,7 +46,7 @@ const initialMockInvoices = [
     dueDate: '2022-04-15',
     createdAt: '2022-04-12T09:00:00Z',
     ordersType: '02',
-    avatar: '/avatars/jack.png'
+    avatar: ''
   },
   {
     id: '4',
@@ -61,7 +61,7 @@ const initialMockInvoices = [
     dueDate: '2022-03-30',
     createdAt: '2022-03-24T20:00:00Z',
     ordersType: '01',
-    avatar: '/avatars/uihut.png'
+    avatar: ''
   },
   {
     id: '5',
@@ -76,7 +76,7 @@ const initialMockInvoices = [
     dueDate: '2022-03-25',
     createdAt: '2022-03-10T20:00:00Z',
     ordersType: 'Withdraw',
-    avatar: '/avatars/citi.png'
+    avatar: ''
   },
   {
     id: '6',
@@ -91,7 +91,7 @@ const initialMockInvoices = [
     dueDate: '2022-03-20',
     createdAt: '2022-03-08T20:00:00Z',
     ordersType: 'Technology',
-    avatar: '/avatars/bitcoin.png'
+    avatar: ''
   },
   {
     id: '7',
@@ -106,7 +106,7 @@ const initialMockInvoices = [
     dueDate: '2022-03-10',
     createdAt: '2022-03-02T19:00:00Z',
     ordersType: '01',
-    avatar: '/avatars/netflix.png'
+    avatar: ''
   },
   {
     id: '8',
@@ -121,7 +121,7 @@ const initialMockInvoices = [
     dueDate: '2022-03-08',
     createdAt: '2022-03-01T20:00:00Z',
     ordersType: 'Withdraw',
-    avatar: '/avatars/sojib.png'
+    avatar: ''
   }
 ];
 

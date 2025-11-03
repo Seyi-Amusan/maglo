@@ -34,7 +34,7 @@ export const DashboardLayout = ({ children }) => {
               
               {/* User Avatar & Dropdown */}
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-lime-300 rounded-full flex items-center justify-center">
                   <span className="text-white text-sm font-medium">JD</span>
                 </div>
                 <span className="text-gray-700 font-medium">John Doe</span>
