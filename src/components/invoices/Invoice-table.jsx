@@ -95,7 +95,7 @@ const InvoiceTable = ({ invoices = [], loading = false, onRefresh, showDueDate =
   return (
     <Card className="p-0 overflow-hidden">
       <div className="overflow-x-auto">
-        <table className="w-full">
+        <table className="w-full min-w-[800px]">
           <thead>
             <tr className="border-b border-gray-200 bg-gray-50">
               <th className="text-left py-4 px-6 text-sm font-medium text-gray-600">NAME/CLIENT</th>

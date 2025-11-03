@@ -63,7 +63,7 @@ const InvoiceDetails = () => {
   const total = parseFloat(invoice.total);
 
   return (
-    <div className="p-6 max-w-6xl mx-auto">
+    <div className="p-4 lg:p-6 max-w-6xl mx-auto">
       <Header title={`Invoice: ${invoice.invoiceNumber}`} />
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

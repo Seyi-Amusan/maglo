@@ -25,7 +25,11 @@ function App() {
       <Toaster position="top-right" />
       <div className="flex min-h-screen">
         {isAuthenticated && <Sidebar />}
-        <main className={`flex-1 bg-gray-50 ${isAuthenticated ? 'ml-0 lg:ml-64' : ''}`}>
+        <main className={`
+          flex-1 bg-gray-50 min-h-screen
+          ${isAuthenticated ? '' : ''}
+          transition-all duration-300
+        `}>
           <Routes>
             {/* Public routes */}
             <Route 
@@ -40,7 +44,7 @@ function App() {
             {/* Protected routes */}
             <Route path="/" element={
               <ProtectedRoute>
-                <Dashboard />
+                <Navigate to="/dashboard" replace />
               </ProtectedRoute>
             } />
             <Route path="/dashboard" element={
@@ -51,6 +55,11 @@ function App() {
             <Route path="/invoices" element={
               <ProtectedRoute>
                 <Invoices />
+              </ProtectedRoute>
+            } />
+            <Route path="/invoices/:id" element={
+              <ProtectedRoute>
+                <InvoiceDetails />
               </ProtectedRoute>
             } />
             <Route path="/transactions" element={
@@ -68,11 +77,7 @@ function App() {
                 <Settings />
               </ProtectedRoute>
             } />
-            <Route path="/invoices/:id" element={
-              <ProtectedRoute>
-                <InvoiceDetails />
-              </ProtectedRoute>
-            } />
+            
             {/* Fallback redirect */}
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
           </Routes>

@@ -27,7 +27,7 @@ const Dashboard = () => {
   const recentInvoices = invoices.slice(0, 3);
 
   return (
-    <div className="p-6">
+    <div className="p-4 lg:p-6">
       <Header title="Dashboard" />
       
       {/* Stats Section */}
