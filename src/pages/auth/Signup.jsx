@@ -1,6 +1,4 @@
 
-
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "@/store/authStore";
@@ -10,7 +8,7 @@ import Button from "@/components/ui/Button";
 import { toast } from "sonner";
 
 import logo from "@/assets/Logo.png";
-import image from "@/assets/images/image.png";
+import image from "@/assets/images/Image.png";
 
 export default function Signup() {
   const [formData, setFormData] = useState({

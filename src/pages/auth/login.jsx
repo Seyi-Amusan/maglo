@@ -6,7 +6,7 @@ import { Toaster } from "sonner";
 import { useAuthStore } from "@/store/authStore";
 import AuthLayout from "@/components/layouts/AuthLayout";
 import logo from "@/assets/Logo.png";
-import image from "@/assets/images/image.png";
+import image from "@/assets/images/Image.png";
 import InputField from "@/components/ui/InputField";
 import Button from "@/components/ui/Button";
 
