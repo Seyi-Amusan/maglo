@@ -105,8 +105,6 @@ Seyi Amusan - Frontend Developer
 - **[Github](https://github.com/seyi-amusan)**
 
 
-##  Demo Video
- A 2–3 minute walkthrough demonstrating:
-- Invoice creation
-- Payment status updates
-- Dashboard summaries and VAT calculations
+## 🎥 Demo Video
+A 2–3 minute walkthrough:  
+[](./Demo-video.mp4)
