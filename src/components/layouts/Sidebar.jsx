@@ -44,12 +44,12 @@ const Sidebar = () => {
         </button>
 
       {/* Sidebar */}
-        <aside className={`
-          fixed lg:static inset-y-0 left-0 z-40
-          w-64 bg-white shadow-sm h-screen p-4 flex flex-col
-          transform transition-transform duration-300 ease-in-out
-          ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-        `}>
+<aside className={`
+  fixed lg:static inset-0 z-40
+  w-64 bg-white shadow-sm h-screen p-4 flex flex-col
+  transform transition-transform duration-300 ease-in-out
+  ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+`}>
           {/* Logo Section */}
           <div className="mb-8 mt-4 lg:mt-0">
             <img 
@@ -80,35 +80,33 @@ const Sidebar = () => {
             </ul>
           </nav>
 
-          {/* User Info & Logout - Absolutely positioned at bottom */}
-          <div className="absolute bottom-4 left-4 right-4"> {/* Absolute positioning */}
-            <div className="border-t border-gray-200 pt-4">
-              {/* User Info */}
-              <div className="px-3 py-2 mb-3">
-                <p className="text-sm font-medium text-gray-900 truncate">
-                  {user?.name || user?.email || 'User'}
-                </p>
-                <p className="text-xs text-gray-500 truncate">
-                  {user?.email}
-                </p>
-              </div>
-
-              {/* Logout Button with Red Accent */}
-              <button
-                onClick={handleLogout}
-                className="flex items-center w-full p-3 text-gray-600 hover:bg-red-400 hover:text-black rounded-lg transition-all duration-200 group"
-              >
-                <LogOut className="h-4 w-4 mr-3" />
-                <span className="font-medium">Logout</span>
-              </button>
+        {/* Mobile Logout Section - Close to last link */}
+          <div className="border-t border-gray-200 pt-4 mt-4">
+            {/* User Info */}
+            <div className="px-3 py-2 mb-3">
+              <p className="text-sm font-medium text-gray-900 truncate">
+                {user?.name || user?.email || 'User'}
+              </p>
+              <p className="text-xs text-gray-500 truncate">
+                {user?.email}
+              </p>
             </div>
+
+            {/* Logout Button with Red Accent */}
+            <button
+              onClick={handleLogout}
+              className="flex items-center w-full p-3 text-gray-600 hover:bg-red-400 hover:text-black rounded-lg transition-all duration-200 group"
+            >
+              <Power className="h-4 w-4 mr-3" />
+              <span className="font-medium">Logout</span>
+            </button>
           </div>
         </aside>
 
       {/* Mobile Overlay */}
       {isMobileMenuOpen && (
         <div 
-          className="lg:hidden fixed inset-0 bg-linear-to-r from-lime-300 to-lime-200 bg-opacity-50 z-30"
+          className="lg:hidden fixed inset-0 bg-gray-100/50 backdrop-blur-sm z-3"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}

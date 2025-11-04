@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { toast } from 'sonner';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
+import { useMockDatabase } from '../../store/mockDatabase';
+
 
 const CreateInvoiceForm = ({ onSuccess }) => {
-  const { createInvoice } = useInvoiceStore();
+  const { createInvoice } = useMockDatabase();
   const [loading, setLoading] = useState(false);
   
   const [formData, setFormData] = useState({
