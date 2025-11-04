@@ -105,7 +105,3 @@ Seyi Amusan - Frontend Developer
 - **[Github](https://github.com/seyi-amusan)**
 
 
-## 🎥 Demo Video
-A 2 minute walkthrough:  
-[![Watch the Demo](./Detail%20Image%20-%202.png)](https://github.com/seyi-amusan/maglo/releases/download/v1.0.0/Demo-video.mp4)
-
