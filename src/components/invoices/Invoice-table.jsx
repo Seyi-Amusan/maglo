@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMockDatabase } from '@/store/mockDatabase';
 import { toast } from 'sonner';
 import Card from '@/components/ui/Card';
+import { useState } from 'react';
 
 const InvoiceTable = ({ invoices = [], loading = false, onRefresh, showDueDate = false }) => {
   const { updateInvoice, deleteInvoice } = useMockDatabase();
@@ -25,20 +26,28 @@ const InvoiceTable = ({ invoices = [], loading = false, onRefresh, showDueDate =
 
   // Fallback avatar component for missing images
   const Avatar = ({ src, alt, className = "" }) => {
-    if (src) {
+    const [error, setError] = useState(false);
+  
+    const initials =
+      alt?.split(" ").map(n => n[0]).join("").toUpperCase() || "NA";
+  
+    // only render <img> if src is valid and not broken
+    if (src && src.trim() !== "" && !error) {
       return (
-        <img 
-          src={src} 
-          alt={alt} 
+        <img
+          src={src}
+          alt={alt}
+          onError={() => setError(true)} // triggers fallback if image fails to load
           className={`w-8 h-8 rounded-full object-cover ${className}`}
         />
       );
     }
-    
-    // Fallback with initials
-    const initials = alt?.split(' ').map(n => n[0]).join('').toUpperCase() || 'NA';
+  
+    // fallback with initials
     return (
-      <div className={`w-8 h-8 rounded-full bg-lime-300 flex items-center justify-center text-white text-xs font-medium ${className}`}>
+      <div
+        className={`w-8 h-8 rounded-full bg-lime-300 flex items-center justify-center text-white text-xs font-medium ${className}`}
+      >
         {initials.slice(0, 2)}
       </div>
     );
